@@ -237,3 +237,242 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 });
+
+/* ==========================================================
+   PART 2
+   PORTFOLIO FILTER
+=========================================================== */
+
+const portfolioFilterButtons =
+    document.querySelectorAll(
+        ".portfolio-filter-button"
+    );
+
+const portfolioCards =
+    document.querySelectorAll(
+        ".portfolio-card"
+    );
+
+
+portfolioFilterButtons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+        const selectedFilter =
+            button.dataset.filter;
+
+
+        portfolioFilterButtons.forEach(
+            (filterButton) => {
+
+                filterButton.classList.remove(
+                    "active"
+                );
+
+            }
+        );
+
+
+        button.classList.add("active");
+
+
+        portfolioCards.forEach((card) => {
+
+            const cardCategory =
+                card.dataset.category;
+
+
+            const shouldShow =
+                selectedFilter === "all" ||
+                cardCategory === selectedFilter;
+
+
+            if (shouldShow) {
+
+                card.classList.remove(
+                    "is-hidden"
+                );
+
+            } else {
+
+                card.classList.add(
+                    "is-hidden"
+                );
+
+            }
+
+        });
+
+    });
+
+});
+
+
+/* ==========================================================
+   PART 2
+   LIGHTBOX
+=========================================================== */
+
+const lightbox =
+    document.getElementById(
+        "portfolioLightbox"
+    );
+
+const lightboxImage =
+    document.getElementById(
+        "lightboxImage"
+    );
+
+const lightboxTitle =
+    document.getElementById(
+        "lightboxTitle"
+    );
+
+const lightboxTriggers =
+    document.querySelectorAll(
+        "[data-lightbox-image]"
+    );
+
+const lightboxCloseButtons =
+    document.querySelectorAll(
+        "[data-lightbox-close]"
+    );
+
+
+function openPortfolioLightbox(
+    imageSource,
+    title
+) {
+
+    if (
+        !lightbox ||
+        !lightboxImage ||
+        !lightboxTitle
+    ) {
+
+        return;
+
+    }
+
+
+    lightboxImage.src =
+        imageSource;
+
+    lightboxImage.alt =
+        title;
+
+    lightboxTitle.textContent =
+        title;
+
+
+    lightbox.classList.add(
+        "open"
+    );
+
+    lightbox.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+
+    document.body.classList.add(
+        "lightbox-open"
+    );
+
+}
+
+
+function closePortfolioLightbox() {
+
+    if (!lightbox) {
+
+        return;
+
+    }
+
+
+    lightbox.classList.remove(
+        "open"
+    );
+
+    lightbox.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+
+    document.body.classList.remove(
+        "lightbox-open"
+    );
+
+
+    window.setTimeout(() => {
+
+        if (lightboxImage) {
+
+            lightboxImage.src = "";
+
+        }
+
+    }, 350);
+
+}
+
+
+lightboxTriggers.forEach((trigger) => {
+
+    trigger.addEventListener(
+        "click",
+        () => {
+
+            const imageSource =
+                trigger.dataset.lightboxImage;
+
+            const title =
+                trigger.dataset.lightboxTitle ||
+                "PT Prasada Cakra Gusna";
+
+
+            if (!imageSource) {
+
+                return;
+
+            }
+
+
+            openPortfolioLightbox(
+                imageSource,
+                title
+            );
+
+        }
+    );
+
+});
+
+
+lightboxCloseButtons.forEach((button) => {
+
+    button.addEventListener(
+        "click",
+        closePortfolioLightbox
+    );
+
+});
+
+
+document.addEventListener(
+    "keydown",
+    (event) => {
+
+        if (
+            event.key === "Escape" &&
+            lightbox?.classList.contains("open")
+        ) {
+
+            closePortfolioLightbox();
+
+        }
+
+    }
+);

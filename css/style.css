@@ -2333,3 +2333,1457 @@ button {
     }
 
 }
+
+/* ==========================================================
+   PART 2
+   PREMIUM PORTFOLIO
+=========================================================== */
+
+.portfolio-section {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f7fafc 0%,
+            #edf4f8 100%
+        );
+
+}
+
+
+.portfolio-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    top: -300px;
+    right: -220px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(24, 182, 201, 0.10);
+
+    filter: blur(80px);
+
+    pointer-events: none;
+
+}
+
+
+.portfolio-header {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+/* ==========================================================
+   FILTER
+=========================================================== */
+
+.portfolio-filter {
+
+    position: relative;
+
+    z-index: 3;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 34px;
+
+    padding: 7px;
+
+    width: fit-content;
+
+    border:
+        1px solid rgba(7, 26, 43, 0.08);
+
+    border-radius: 999px;
+
+    background:
+        rgba(255, 255, 255, 0.75);
+
+    backdrop-filter:
+        blur(20px);
+
+    box-shadow:
+        0 10px 30px rgba(7, 26, 43, 0.06);
+
+}
+
+
+.portfolio-filter-button {
+
+    border: 0;
+
+    padding:
+        10px 18px;
+
+    border-radius: 999px;
+
+    color: var(--muted);
+
+    background: transparent;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        color var(--transition),
+        background var(--transition),
+        transform var(--transition);
+
+}
+
+
+.portfolio-filter-button:hover {
+
+    color: var(--navy);
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+.portfolio-filter-button.active {
+
+    color: var(--white);
+
+    background:
+        var(--navy);
+
+    box-shadow:
+        0 8px 20px rgba(7, 26, 43, 0.18);
+
+}
+
+
+/* ==========================================================
+   PORTFOLIO GRID
+=========================================================== */
+
+.portfolio-grid {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 24px;
+
+}
+
+
+.portfolio-card {
+
+    overflow: hidden;
+
+    border:
+        1px solid rgba(7, 26, 43, 0.07);
+
+    border-radius:
+        28px;
+
+    background:
+        rgba(255, 255, 255, 0.92);
+
+    box-shadow:
+        0 18px 50px rgba(7, 26, 43, 0.07);
+
+    transition:
+        transform 500ms cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        ),
+        box-shadow 500ms ease;
+
+}
+
+
+.portfolio-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 35px 80px rgba(7, 26, 43, 0.14);
+
+}
+
+
+.portfolio-card.is-hidden {
+
+    display: none;
+
+}
+
+
+/* ==========================================================
+   PORTFOLIO IMAGE
+=========================================================== */
+
+.portfolio-image-button {
+
+    display: block;
+
+    width: 100%;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    text-align: left;
+
+    cursor: pointer;
+
+}
+
+
+.portfolio-image {
+
+    position: relative;
+
+    height: 330px;
+
+    overflow: hidden;
+
+    background:
+        #dce7ee;
+
+}
+
+
+.portfolio-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 800ms
+        cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        );
+
+}
+
+
+.portfolio-card:hover
+.portfolio-image img {
+
+    transform:
+        scale(1.06);
+
+}
+
+
+.portfolio-image-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    padding: 24px;
+
+    color: var(--white);
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 45%,
+            rgba(7, 26, 43, 0.82)
+        );
+
+    opacity: 0;
+
+    transition:
+        opacity var(--transition);
+
+}
+
+
+.portfolio-card:hover
+.portfolio-image-overlay {
+
+    opacity: 1;
+
+}
+
+
+.portfolio-image-overlay span {
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+}
+
+
+.portfolio-image-overlay strong {
+
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    color: var(--navy);
+
+    background: var(--white);
+
+    font-size: 18px;
+
+}
+
+
+/* ==========================================================
+   PORTFOLIO CONTENT
+=========================================================== */
+
+.portfolio-content {
+
+    padding:
+        30px;
+
+}
+
+
+.portfolio-meta {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    color: var(--cyan);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.8px;
+
+}
+
+
+.portfolio-meta span:last-child {
+
+    color: #a8b6c2;
+
+}
+
+
+.portfolio-content h3 {
+
+    max-width: 520px;
+
+    margin-top: 14px;
+
+    color: var(--navy);
+
+    font-size: 27px;
+
+    letter-spacing: -1px;
+
+}
+
+
+.portfolio-content p {
+
+    max-width: 580px;
+
+    margin-top: 12px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+}
+
+
+.portfolio-tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 22px;
+
+}
+
+
+.portfolio-tags span {
+
+    padding:
+        7px 11px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 999px;
+
+    color: var(--muted);
+
+    background:
+        #f8fafc;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+}
+
+
+/* ==========================================================
+   DARK SERVICE CARD
+=========================================================== */
+
+.portfolio-card-dark {
+
+    color: var(--white);
+
+    background:
+        linear-gradient(
+            145deg,
+            #061625,
+            #0b3452
+        );
+
+}
+
+
+.portfolio-card-dark
+.portfolio-content h3 {
+
+    color: var(--white);
+
+}
+
+
+.portfolio-card-dark
+.portfolio-content p {
+
+    color: #a9bdcc;
+
+}
+
+
+.portfolio-card-dark
+.portfolio-meta span:last-child {
+
+    color: #7192a8;
+
+}
+
+
+.portfolio-card-dark
+.portfolio-tags span {
+
+    border-color:
+        rgba(255,255,255,0.10);
+
+    color: #a9bdcc;
+
+    background:
+        rgba(255,255,255,0.04);
+
+}
+
+
+/* ==========================================================
+   SERVICE VISUAL
+=========================================================== */
+
+.portfolio-service-visual {
+
+    position: relative;
+
+    height: 330px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #0d5277,
+            #061625 65%
+        );
+
+}
+
+
+.service-orbit {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    border:
+        1px solid
+        rgba(24, 182, 201, 0.35);
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    animation:
+        orbitPulse 5s ease-in-out infinite;
+
+}
+
+
+.orbit-one {
+
+    width: 180px;
+    height: 180px;
+
+}
+
+
+.orbit-two {
+
+    width: 290px;
+    height: 290px;
+
+    animation-delay:
+        900ms;
+
+}
+
+
+.service-core {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 82px;
+    height: 82px;
+
+    display: grid;
+
+    place-items: center;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.15);
+
+    border-radius: 24px;
+
+    color: var(--white);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--cyan)
+        );
+
+    box-shadow:
+        0 20px 60px
+        rgba(24, 182, 201, 0.25);
+
+    font-size: 32px;
+
+    transform:
+        translate(-50%, -50%);
+
+    animation:
+        coreFloat 4s ease-in-out infinite;
+
+}
+
+
+@keyframes orbitPulse {
+
+    0%,
+    100% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.96);
+
+        opacity:
+            0.45;
+
+    }
+
+    50% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.04);
+
+        opacity:
+            1;
+
+    }
+
+}
+
+
+@keyframes coreFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translate(-50%, -50%);
+
+    }
+
+    50% {
+
+        transform:
+            translate(-50%, -56%);
+
+    }
+
+}
+
+
+/* ==========================================================
+   LIGHT SERVICE VISUAL
+=========================================================== */
+
+.portfolio-service-light {
+
+    display: grid;
+
+    place-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #edf7fa,
+            #dcecf4
+        );
+
+}
+
+
+.service-grid-pattern {
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0.55;
+
+    background-image:
+        linear-gradient(
+            rgba(11,92,173,0.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(11,92,173,0.08) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        38px 38px;
+
+}
+
+
+.service-blueprint {
+
+    position: relative;
+
+    width: 220px;
+
+    padding:
+        28px;
+
+    border:
+        1px solid
+        rgba(11,92,173,0.18);
+
+    border-radius: 20px;
+
+    color: var(--navy);
+
+    background:
+        rgba(255,255,255,0.72);
+
+    box-shadow:
+        0 25px 60px
+        rgba(7,26,43,0.10);
+
+    transform:
+        rotate(-3deg);
+
+}
+
+
+.service-blueprint span {
+
+    color: var(--cyan);
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+}
+
+
+.service-blueprint strong {
+
+    display: block;
+
+    margin-top: 18px;
+
+    font-size: 22px;
+
+    letter-spacing: -1px;
+
+}
+
+
+.service-blueprint small {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color: var(--muted);
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+/* ==========================================================
+   GOLD SERVICE VISUAL
+=========================================================== */
+
+.portfolio-service-gold {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding:
+        50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #081c2e,
+            #103d58
+        );
+
+}
+
+
+.service-number {
+
+    color: var(--gold);
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size:
+        clamp(64px, 8vw, 110px);
+
+    font-weight: 800;
+
+    letter-spacing: -7px;
+
+}
+
+
+.service-caption {
+
+    margin-top: 8px;
+
+    color: #b6cad8;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+}
+
+
+/* ==========================================================
+   PROJECT SECTION
+=========================================================== */
+
+.project-section {
+
+    background:
+        var(--white);
+
+}
+
+
+.project-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 24px;
+
+}
+
+
+.project-card {
+
+    overflow: hidden;
+
+    border-radius:
+        26px;
+
+    background:
+        #f5f8fa;
+
+    border:
+        1px solid
+        rgba(7,26,43,0.06);
+
+    box-shadow:
+        0 15px 45px
+        rgba(7,26,43,0.06);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+
+}
+
+
+.project-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 30px 70px
+        rgba(7,26,43,0.13);
+
+}
+
+
+.project-card-large {
+
+    grid-column:
+        span 2;
+
+}
+
+
+.project-card-wide {
+
+    grid-column:
+        span 2;
+
+}
+
+
+.project-image-button {
+
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+
+    height: 380px;
+
+    padding: 0;
+
+    overflow: hidden;
+
+    border: 0;
+
+    background:
+        #d7e3e9;
+
+    cursor: pointer;
+
+}
+
+
+.project-card:not(.project-card-large):not(.project-card-wide)
+.project-image-button {
+
+    height: 300px;
+
+}
+
+
+.project-card-wide
+.project-image-button {
+
+    height: 400px;
+
+}
+
+
+.project-image-button img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 900ms
+        cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        );
+
+}
+
+
+.project-card:hover
+.project-image-button img {
+
+    transform:
+        scale(1.06);
+
+}
+
+
+.project-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    padding: 28px;
+
+    color: var(--white);
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 35%,
+            rgba(4,18,31,0.85)
+        );
+
+    opacity: 0;
+
+    transition:
+        opacity var(--transition);
+
+}
+
+
+.project-card:hover
+.project-overlay {
+
+    opacity: 1;
+
+}
+
+
+.project-overlay span {
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+}
+
+
+.project-overlay strong {
+
+    width: 46px;
+    height: 46px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    color: var(--navy);
+
+    background:
+        var(--white);
+
+    font-size: 18px;
+
+}
+
+
+.project-info {
+
+    padding:
+        26px 28px 30px;
+
+}
+
+
+.project-info > span {
+
+    color: var(--cyan);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.project-info h3 {
+
+    max-width: 700px;
+
+    margin-top: 10px;
+
+    color: var(--navy);
+
+    font-size: 25px;
+
+    letter-spacing: -1px;
+
+}
+
+
+.project-info p {
+
+    max-width: 650px;
+
+    margin-top: 10px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+}
+
+
+/* ==========================================================
+   LIGHTBOX
+=========================================================== */
+
+.portfolio-lightbox {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 5000;
+
+    display: grid;
+
+    place-items: center;
+
+    padding: 30px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 350ms ease,
+        visibility 350ms ease;
+
+}
+
+
+.portfolio-lightbox.open {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+.lightbox-backdrop {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(2,10,18,0.88);
+
+    backdrop-filter:
+        blur(15px);
+
+}
+
+
+.lightbox-dialog {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(
+        1100px,
+        100%
+    );
+
+    max-height: 90vh;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.10);
+
+    border-radius:
+        24px;
+
+    background:
+        #071a2b;
+
+    box-shadow:
+        0 40px 100px
+        rgba(0,0,0,0.45);
+
+    transform:
+        scale(0.94)
+        translateY(20px);
+
+    transition:
+        transform 500ms
+        cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        );
+
+}
+
+
+.portfolio-lightbox.open
+.lightbox-dialog {
+
+    transform:
+        scale(1)
+        translateY(0);
+
+}
+
+
+.lightbox-dialog > img {
+
+    display: block;
+
+    width: 100%;
+
+    max-height: 72vh;
+
+    object-fit: contain;
+
+    background:
+        #06131f;
+
+}
+
+
+.lightbox-close {
+
+    position: absolute;
+
+    z-index: 4;
+
+    top: 18px;
+    right: 18px;
+
+    width: 44px;
+    height: 44px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.15);
+
+    border-radius: 50%;
+
+    color: var(--white);
+
+    background:
+        rgba(7,26,43,0.75);
+
+    backdrop-filter:
+        blur(12px);
+
+    font-size: 27px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        transform var(--transition),
+        background var(--transition);
+
+}
+
+
+.lightbox-close:hover {
+
+    transform:
+        rotate(90deg);
+
+    background:
+        var(--blue);
+
+}
+
+
+.lightbox-caption {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    padding:
+        20px 24px 24px;
+
+}
+
+
+.lightbox-caption span {
+
+    color: var(--cyan);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.lightbox-caption strong {
+
+    color: var(--white);
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size: 18px;
+
+}
+
+body.lightbox-open {
+    overflow: hidden;
+}
+
+
+/* ==========================================================
+   PART 2 RESPONSIVE
+=========================================================== */
+
+@media (max-width: 900px) {
+
+    .portfolio-grid,
+    .project-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .project-card-large,
+    .project-card-wide {
+
+        grid-column:
+            auto;
+
+    }
+
+
+    .portfolio-image,
+    .portfolio-service-visual {
+
+        height: 300px;
+
+    }
+
+
+    .project-image-button,
+    .project-card-wide
+    .project-image-button {
+
+        height: 320px;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .portfolio-filter {
+
+        width: 100%;
+
+        justify-content: space-between;
+
+    }
+
+
+    .portfolio-filter-button {
+
+        flex: 1;
+
+        padding:
+            10px 12px;
+
+    }
+
+
+    .portfolio-content {
+
+        padding:
+            24px;
+
+    }
+
+
+    .portfolio-content h3 {
+
+        font-size: 23px;
+
+    }
+
+
+    .portfolio-image,
+    .portfolio-service-visual {
+
+        height: 260px;
+
+    }
+
+
+    .project-image-button,
+    .project-card:not(.project-card-large):not(.project-card-wide)
+    .project-image-button,
+    .project-card-wide
+    .project-image-button {
+
+        height: 260px;
+
+    }
+
+
+    .project-info {
+
+        padding:
+            22px;
+
+    }
+
+
+    .project-info h3 {
+
+        font-size: 21px;
+
+    }
+
+
+    .portfolio-lightbox {
+
+        padding: 15px;
+
+    }
+
+
+    .lightbox-dialog {
+
+        border-radius:
+            18px;
+
+    }
+
+
+    .lightbox-dialog > img {
+
+        max-height: 65vh;
+
+    }
+
+}
