@@ -2726,3 +2726,231 @@
     }
 
 }
+/* ==========================================================
+   ABOUT HERO IMAGE
+=========================================================== */
+
+.about-card-image {
+
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    border-radius: inherit;
+
+}
+
+
+.about-card-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition:
+        transform 900ms cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        );
+
+}
+
+
+.about-hero-card:hover
+.about-card-image img {
+
+    transform: scale(1.06);
+
+}
+
+
+.about-card-image-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(7, 26, 43, 0.08) 0%,
+            rgba(7, 26, 43, 0.20) 40%,
+            rgba(7, 26, 43, 0.82) 100%
+        );
+
+}
+
+
+.about-card-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    padding: 32px;
+
+}
+
+
+.about-card-top {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+.about-card-top span {
+
+    color: #ffffff;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.about-card-main {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    margin-top: auto;
+
+    margin-bottom: 24px;
+
+}
+
+
+.about-card-main strong {
+
+    display: block;
+
+    color: #ffffff;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size: 18px;
+
+}
+
+
+.about-card-main small {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: rgba(255,255,255,0.72);
+
+    font-size: 10px;
+
+}
+
+
+.about-card-symbol {
+
+    width: 54px;
+
+    height: 54px;
+
+    display: grid;
+
+    place-items: center;
+
+    flex: 0 0 54px;
+
+    border:
+        1px solid rgba(255,255,255,0.25);
+
+    border-radius: 16px;
+
+    background:
+        rgba(255,255,255,0.12);
+
+    backdrop-filter:
+        blur(12px);
+
+}
+
+
+.about-card-symbol span {
+
+    color: #ffffff;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+}
+
+
+.about-card-bottom {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+}
+
+
+.about-card-bottom span {
+
+    padding:
+        7px 10px;
+
+    border:
+        1px solid rgba(255,255,255,0.18);
+
+    border-radius: 999px;
+
+    color: rgba(255,255,255,0.85);
+
+    background:
+        rgba(255,255,255,0.08);
+
+    backdrop-filter:
+        blur(10px);
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+}
